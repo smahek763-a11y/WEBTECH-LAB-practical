@@ -1,0 +1,80 @@
+/*Basic Page Setup*/
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color:#f0bfbf;
+}
+
+/*Header Section*/
+
+.header {
+  background-color:#1b3551;
+  color:white;
+  text-align:center;
+  padding: 20px;}
+
+/*Navigation Bar*/
+
+.navbar {
+  background-color:#e1a9a9;
+  text-align: center;}
+
+.navbar span {
+  display: inline-block;
+  color: white;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
+.navbar span:hover {
+  background-color:#5a5454;}
+
+/* Main Content Layout */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+
+}
+
+.sidebar {
+  background-color:#e0e0e0;
+  flex: 1 1 25%;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.content {
+  background-color:white;
+  flex: 1 1 70%;
+  margin-left: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px Orgba(0,0,0,0.2);
+}
+
+/*Footer Section*/ 
+.footer {
+  background-color:#007bff;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* Styling Inside Content*/ 
+.highlight{
+    color:red;
+    font-weight: bold;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 600px) {
+.main {
+  flex-direction: column;
+}
+.content {
+  margin-left: 0;
+}
+}

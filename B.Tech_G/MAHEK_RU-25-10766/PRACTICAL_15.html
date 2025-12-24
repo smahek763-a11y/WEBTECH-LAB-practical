@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOM Manipulation Demo</title>
+<link rel="stylesheet" href="PRACTICAL_15.css"
+</head>
+<body>
+
+<div class="card">
+    <h2>DOM Manipulation Example</h2>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <textarea id="messageInput" placeholder="Enter your message"></textarea>
+    <button onclick="updateCard()">Update Card</button>
+
+    <div class="output" id="cardOutput">
+        <h3 id="displayName">Your Name Here</h3>
+        <p id="displayMessage">Your message will appear here.</p>
+    </div>
+</div>
+
+<script>
+function updateCard() {
+    // Get user input using getElementById
+    const name = document.getElementById("nameInput").value;
+    const message = document.getElementById("messageInput").value;
+
+    // Update DOM elements using innerHTML
+    document.getElementById("displayName").innerHTML = name ? name : "Your Name Here";
+
+    // Another way: use querySelector to select element
+    const messagePara = document.querySelector("#displayMessage");
+    messagePara.innerHTML = message ? message : "Your message will appear here.";
+}
+</script>
+
+</body>
+</html>

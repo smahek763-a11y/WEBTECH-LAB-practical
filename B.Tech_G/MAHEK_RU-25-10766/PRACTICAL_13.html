@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User-Defined Functions & Scope Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input, button {
+            margin: 5px 0;
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+        .output {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Add Two Numbers (User-Defined Function)</h2>
+<input type="number" id="num1" placeholder="Enter first number">
+<input type="number" id="num2" placeholder="Enter second number">
+<br>
+<button onclick="addNumbers()">Add Numbers</button>
+
+<div class="output" id="sumOutput"></div>
+
+<h2>Scope Demonstration (var, let, const)</h2>
+<button onclick="scopeDemo()">Show Scope</button>
+
+<div class="output" id="scopeOutput"></div>
+
+<script>
+    // User-defined function to add numbers
+    function addNumbers() {
+        let a = Number(document.getElementById("num1").value);
+        let b = Number(document.getElementById("num2").value);
+        var sum = a + b; // var is function-scoped
+        document.getElementById("sumOutput").innerText = "Sum is: " + sum;
+    }
+
+    // Function to demonstrate scope
+    function scopeDemo() {
+        let output = "";
+
+        if (true) {
+            var functionVar = "I am function-scoped (var)";
+            let blockLet = "I am block-scoped (let)";
+            const blockConst = "I am block-scoped (const)";
+
+            output += "Inside block:\n";
+            output += functionVar + "\n";
+            output += blockLet + "\n";
+            output += blockConst + "\n";
+        }
+
+        output += "\nOutside block:\n";
+        output += functionVar + "\n"; // Accessible
+        // blockLet and blockConst are NOT accessible here
+
+        document.getElementById("scopeOutput").innerText = output;
+    }
+</script>
+
+</body>
+</html>

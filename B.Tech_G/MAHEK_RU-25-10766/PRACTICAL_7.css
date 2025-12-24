@@ -1,0 +1,55 @@
+
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background: color #f4f4f4;
+}
+
+header{
+background-color:yellowgreen; 
+background-size: cover;
+background-position: center;
+text-align: center;
+color: blanchedalmond;
+padding: 80px 20px;
+border-bottom: 5px solid #333;
+}
+
+header h1 {
+font-size: 50px;
+margin: 0;
+text-shadow: 2px 2px 4px black;
+}
+
+/*CONTENT BOX (Box Model Example)*/
+
+.content-box {
+width: 80%;
+max-width: 800px;
+margin: 40px auto;
+padding: 30px;
+border: 3px solid;
+border-radius: 10px;
+background-color:white;
+box-shadow: 4px 4px 10px Orgba(0,0,0,0.2);
+}
+
+.content-box h2 {
+text-align: center;
+color: #333;
+text-decoration: underline;
+}
+
+.content-box p {
+line-height: 1.6;
+color: O#333;
+text-align: justify;
+}
+footer{
+text-align: center;
+padding: 20px;
+color:aquamarine;
+background-color: #333;
+margin-top: 40px;
+}

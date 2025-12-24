@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(113, 153, 227);
+    margin: 25px;
+    padding: 20px;
+
+}
+.types{
+    border: 25px solid rgb(50, 49, 118);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    
+}

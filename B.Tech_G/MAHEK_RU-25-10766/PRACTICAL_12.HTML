@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Interactive Conditions & Loops</title>
+<link rel="stylesheet" href="PRACTICAL_12.css">
+</head>
+<body>
+<!-- IF ELSE -->
+<div class="box">
+    <h2>IF–ELSE — We check if number is positive, negative or zero</h2>
+    <input type="number" id="ifInput" placeholder="Enter a number">
+    <button onclick="checkIfElse()">Check</button>
+    <div class="result" id="ifResult"></div>
+</div>
+
+<!-- SWITCH -->
+<div class="box">
+    <h2>SWITCH–CASE — We display weekday name using user number (1–7)</h2>
+    <input type="number" id="switchInput" placeholder="Enter number 1–7">
+    <button onclick="checkSwitch()">Show Day</button>
+    <div class="result" id="switchResult"></div>
+</div>
+
+<!-- FOR LOOP -->
+<div class="box">
+    <h2>FOR Loop — We print numbers from 1 to user's input</h2>
+    <input type="number" id="forInput" placeholder="Enter a number">
+    <button onclick="runForLoop()">Run For Loop</button>
+    <div class="result" id="forResult"></div>
+</div>
+
+<!-- WHILE LOOP -->
+<div class="box">
+    <h2>WHILE Loop — We count down from user's number to 1</h2>
+    <input type="number" id="whileInput" placeholder="Enter a number">
+    <button onclick="runWhileLoop()">Run While Loop</button>
+    <div class="result" id="whileResult"></div>
+</div>
+
+<!-- DO WHILE LOOP -->
+<div class="box">
+    <h2>DO–WHILE Loop — We print numbers at least once</h2>
+    <input type="number" id="doInput" placeholder="Enter a number">
+    <button onclick="runDoWhile()">Run Do–While</button>
+    <div class="result" id="doResult"></div>
+</div>
+
+<script>
+
+// IF ELSE
+function checkIfElse() {
+    let n = document.getElementById("ifInput").value;
+    if (n > 0) result = "Positive";
+    else if (n < 0) result = "Negative";
+    else result = "Zero";
+    document.getElementById("ifResult").innerHTML = result;
+}
+
+// SWITCH CASE
+function checkSwitch() {
+    let n = Number(document.getElementById("switchInput").value);
+    let day;
+    switch (n) {
+        case 1: day = "Monday"; break;
+        case 2: day = "Tuesday"; break;
+        case 3: day = "Wednesday"; break;
+        case 4: day = "Thursday"; break;
+        case 5: day = "Friday"; break;
+        case 6: day = "Saturday"; break;
+        case 7: day = "Sunday"; break;
+        default: day = "Invalid";
+    }
+    document.getElementById("switchResult").innerHTML = day;
+}
+
+// FOR LOOP
+function runForLoop() {
+    let n = document.getElementById("forInput").value;
+    let output = "";
+    for (let i = 1; i <= n; i++) output += i + " ";
+    document.getElementById("forResult").innerHTML = output;
+}
+
+// WHILE LOOP
+function runWhileLoop() {
+    let n = document.getElementById("whileInput").value;
+    let out = "";
+    while (n >= 1) {
+        out += n + " ";
+        n--;
+    }
+    document.getElementById("whileResult").innerHTML = out;
+}
+
+// DO WHILE LOOP
+function runDoWhile() {
+    let n = document.getElementById("doInput").value;
+    let i = n;
+    let out = "";
+    do {
+        out += i + " ";
+        i--;
+    } while (i >= 1);
+    document.getElementById("doResult").innerHTML = out;
+}
+
+</script>
+
+</body>
+</html>

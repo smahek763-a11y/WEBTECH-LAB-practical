@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Show/Hide Toggle Example</title>
+<style>
+    /* Base styling */
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    .box {
+        padding: 15px;
+        background-color: lightblue;
+        border: 1px solid #0077aa;
+        margin-top: 10px;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    /* Hidden state */
+    .hidden {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+
+    /* Button styling */
+    button {
+        padding: 8px 15px;
+        background-color: #0077aa;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    button:hover {
+        background-color: #005f88;
+    }
+</style>
+</head>
+<body>
+
+<h2>Show / Hide HTML Element with Toggle</h2>
+
+<!-- Toggle Button -->
+<button id="toggleBtn">Hide Box</button>
+
+<!-- Element to show/hide -->
+<div id="myBox" class="box">
+    This is a toggleable box. Click the button to hide or show me.
+</div>
+
+<script>
+    // Get references to elements
+    const toggleBtn = document.getElementById('toggleBtn');
+    const myBox = document.getElementById('myBox');
+
+    // Add click event listener
+    toggleBtn.addEventListener('click', function () {
+        // Toggle the 'hidden' class
+        myBox.classList.toggle('hidden');
+
+        // Update button text based on visibility
+        if (myBox.classList.contains('hidden')) {
+            toggleBtn.textContent = 'Show Box';
+        } else {
+            toggleBtn.textContent = 'Hide Box';
+        }
+    });
+</script>
+
+</body>
+</html>

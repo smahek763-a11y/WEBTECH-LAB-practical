@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOM Manipulation Example</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    #container {
+        border: 2px solid #333;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        min-height: 100px;
+    }
+    .item {
+        padding: 8px;
+        margin: 5px 0;
+        background-color: #d1e7dd;
+        border: 1px solid #0f5132;
+        border-radius: 4px;
+    }
+    button {
+        margin: 5px;
+        padding: 8px 12px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        background-color: #0d6efd;
+        color: white;
+    }
+    button:hover {
+        background-color: #0b5ed7;
+    }
+</style>
+</head>
+<body>
+
+<h2>JavaScript DOM Manipulation</h2>
+
+<div id="container">
+    <p class="item">Initial Item</p>
+</div>
+
+<button onclick="addItem()">Add Item</button>
+<button onclick="modifyFirst()">Modify First Item</button>
+<button onclick="removeLast()">Remove Last Item</button>
+
+<script>
+    // Function to append a new element
+    function addItem() {
+        const container = document.getElementById('container');
+        const newItem = document.createElement('p');
+        newItem.className = 'item';
+        newItem.textContent = 'New Item ' + (container.children.length + 1);
+        container.appendChild(newItem);
+    }
+
+    // Function to modify the first child element
+    function modifyFirst() {
+        const container = document.getElementById('container');
+        if (container.firstElementChild) {
+            container.firstElementChild.textContent = '✅ Modified First Item';
+            container.firstElementChild.style.backgroundColor = '#fff3cd';
+            container.firstElementChild.style.borderColor = '#856404';
+        } else {
+            alert('No items to modify!');
+        }
+    }
+
+    // Function to remove the last child element
+    function removeLast() {
+        const container = document.getElementById('container');
+        if (container.lastElementChild) {
+            container.removeChild(container.lastElementChild);
+        } else {
+            alert('No items to remove!');
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DOM Manipulation Example</title>
+<style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #container { border: 1px solid #ccc; padding: 10px; min-height: 50px; }
+    button { margin: 5px; }
+</style>
+</head>
+<body>
+
+<h2>JavaScript DOM Manipulation</h2>
+
+<div id="container">
+    <p>Initial paragraph inside container.</p>
+</div>
+
+<input type="text" id="newText" placeholder="Enter text for new element">
+<br>
+<button onclick="appendElement()">Append Element</button>
+<button onclick="modifyFirstChild()">Modify First Child</button>
+<button onclick="removeLastChild()">Remove Last Child</button>
+
+<script>
+// Append a new paragraph to the container
+function appendElement() {
+    const container = document.getElementById('container');
+    const textValue = document.getElementById('newText').value.trim();
+
+    if (!textValue) {
+        alert("Please enter some text before appending.");
+        return;
+    }
+
+    const newPara = document.createElement('p'); // Create <p> element
+    newPara.textContent = textValue; // Set text
+    container.appendChild(newPara); // Append to container
+    document.getElementById('newText').value = ''; // Clear input
+}
+
+// Modify the first child element's text
+function modifyFirstChild() {
+    const container = document.getElementById('container');
+    if (container.firstChild) {
+        // Ensure it's an element node, not a text node
+        let firstElement = Array.from(container.childNodes)
+                                 .find(node => node.nodeType === Node.ELEMENT_NODE);
+        if (firstElement) {
+            firstElement.textContent = "This text has been modified!";
+        } else {
+            alert("No element found to modify.");
+        }
+    } else {
+        alert("Container is empty.");
+    }
+}
+
+// Remove the last child element
+function removeLastChild() {
+    const container = document.getElementById('container');
+    // Find last element node
+    let lastElement = Array.from(container.childNodes)
+                           .reverse()
+                           .find(node => node.nodeType === Node.ELEMENT_NODE);
+    if (lastElement) {
+        container.removeChild(lastElement);
+    } else {
+        alert("No element found to remove.");
+    }
+}
+</script>
+
+</body>
+</html>

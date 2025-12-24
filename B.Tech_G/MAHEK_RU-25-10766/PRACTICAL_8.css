@@ -1,0 +1,58 @@
+/*Universal Selector - applies to all elements */
+*{
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: rgb(248, 243, 237);
+}
+
+/*Type Selector - selects all elements of a type */
+body {
+  background-color:#e8edf4;
+  margin: 30px;
+}
+
+h1 {
+  color:#2c3e50;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+p {
+  color:#140738;
+  line-height: 1.6;
+}
+
+/* Class Selector - starts with a dot (.) */
+.highlight {
+  background-color: #e8debb;
+  border-left: 5px solid #2c3e50;
+  padding: 10px;
+}
+
+.note {
+  color: #123b54;
+  font-style: italic;
+}
+
+/* ID Selector - starts with a hash (#) */
+#special {
+  background-color:#d6eaf8;
+  border: 2px solid #3498db;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/*Descendant Selector - selects elements inside another */
+div p {
+  color: #0e3158;
+  background-color:#9cc6e7;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/*Group Selector - styles multiple elements the same way */|
+h2, h3 {
+  color:#064539;
+  border-bottom: 2px solid #024135;
+  padding-bottom: 5px;
+}
