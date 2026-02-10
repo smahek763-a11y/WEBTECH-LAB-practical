@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example of Image Tag</title>
+</head>
+<body>
+    <h1>HTML &lt;img&gt; Tag Example</h1>
+
+    <!--  Example 1: Local image (from same folder) -->
+    <p>1. Local Image Example:</p>
+    <img src="photo.webp" alt="my photo" width="300" height="200">
+    <!-- 
+        src   = image ka path (yahan 'flower.jpg')
+        alt   = agar image load na ho to ye text show hota hai
+        width = image ki width (in pixels)
+        height= image ki height (in pixels)
+    -->
+    <hr>
+    <!--  Example 2: Online image (from URL) -->
+    <p>2. Online Image Example:</p>
+    <img src="https://www.w3schools.com/html/img_chania.jpg" 
+         alt="Scenic View of Mountains" width="400" height="250">
+    <!-- 
+        src me external URL diya gaya hai (web se image load hoti hai)
+        alt me alternate text diya gaya hai
+        width & height se image ka size control hota hai
+    -->
+    <hr>
+    <!--  Example 3: Image not found (to show alt text) -->
+    <p>3. Missing Image Example (shows alt text):</p>
+    <img src="missingimage.jpg" alt="Image not found" width="300" height="200">
+    <!-- 
+        yahan image file nahi hai, isliye alt text ("Image not found") display hoga
+    -->
+
+</body>
+</html>

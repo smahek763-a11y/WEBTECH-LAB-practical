@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Canvas Drawing Project</title>
+
+<style>
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #283048, #366a7d);
+  font-family: Arial, sans-serif;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+/* ===== CANVAS ===== */
+canvas {
+  border: 2px solid #333;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>Canvas Drawing Project</h2>
+  <p>Shapes & Color Fill using JavaScript</p>
+
+  <canvas id="myCanvas" width="320" height="220"></canvas>
+</div>
+
+<script>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+/* ===== RECTANGLE ===== */
+ctx.fillStyle = "#4CAF50";   // green
+ctx.fillRect(20, 20, 100, 60);
+
+/* ===== CIRCLE ===== */
+ctx.beginPath();
+ctx.arc(200, 50, 30, 0, Math.PI * 2);
+ctx.fillStyle = "#FF5722";   // orange
+ctx.fill();
+
+/* ===== LINE ===== */
+ctx.beginPath();
+ctx.moveTo(20, 120);
+ctx.lineTo(300, 120);
+ctx.strokeStyle = "#0000FF"; // blue
+ctx.lineWidth = 3;
+ctx.stroke();
+
+/* ===== TRIANGLE ===== */
+ctx.beginPath();
+ctx.moveTo(160, 180);
+ctx.lineTo(220, 140);
+ctx.lineTo(280, 180);
+ctx.closePath();
+ctx.fillStyle = "#9C27B0";   // purple
+ctx.fill();
+
+/* ===== TEXT ===== */
+ctx.font = "16px Arial";
+ctx.fillStyle = "#000";
+ctx.fillText("Canvas Drawing", 90, 205);
+</script>
+
+</body>
+</html>
